@@ -157,7 +157,7 @@ def load_models():
         scaler = pickle.load(f)
     with open('cluster_labels.pkl', 'rb') as f:
         cluster_labels = pickle.load(f)
-    item_sim_df = pd.read_pickle('item_similarity.pkl')
+    item_sim_df = pd.read_pickle('item_similarity.pkl', compression='gzip')    
     with open('product_list.pkl', 'rb') as f:
         product_list = pickle.load(f)
     return kmeans, scaler, cluster_labels, item_sim_df, product_list
